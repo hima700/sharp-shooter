@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6dc1053ddfc18543bd1acd3e37c97db, type: 3}
+  m_Name: Pistol
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
+  weaponPrefab: {fileID: 5330852843453054185, guid: 0fa9156d233aa3b4cabbc52fc82cee0b, type: 3}
+  Damage: 2
+  FireRate: 0.5
+  HitVFXPrefab: {fileID: 5583453263884022992, guid: 26a4602c425398946860eb42ee127485, type: 3}
+  IsAutomatic: 0
