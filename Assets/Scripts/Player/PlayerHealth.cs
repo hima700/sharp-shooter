@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         currentHealth = startingHealth;
+        //Debug.Log("Starting Health: " + startingHealth + " | Shield Bars Length: " + shieldBars.Length);
         AdjustShieldUI();
     }
 

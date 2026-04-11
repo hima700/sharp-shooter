@@ -16,5 +16,6 @@ UserSettings/
 *.pidb
 *.booproj
 *.svd
+Assets/_Recovery/
 
 .vscode/
