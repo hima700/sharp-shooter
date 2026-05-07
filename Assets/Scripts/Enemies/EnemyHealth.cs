@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int startingHealth = 3;
 
     int currentHealth;
+    bool isDead;
 
     GameManager gameManager;
 
@@ -22,20 +23,29 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        if (isDead) return;
 
         currentHealth -= amount;
 
         if (currentHealth <= 0)
         {
-            gameManager.AdjustEnemiesLeft(-1);
-            SelfDestruct();
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+
+        gameManager.AdjustEnemiesLeft(-1);
+        Instantiate(robotExplosionVFX, transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 
     public void SelfDestruct()
     {
-        Instantiate(robotExplosionVFX, transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
+        Die();
     }
 
 }

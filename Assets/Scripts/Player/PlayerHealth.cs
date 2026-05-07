@@ -38,6 +38,11 @@ public class PlayerHealth : MonoBehaviour
         weaponCamera.parent = null;
         deathVirtualCamera.Priority = gameOverVirtualCameraPriority;
         gameOverContainer.SetActive(true);
+        GameManager gameManager = FindFirstObjectByType<GameManager>();
+        if (gameManager)
+        {
+            gameManager.OnPlayerDefeated();
+        }
         StarterAssetsInputs starterAssetsInputs = FindFirstObjectByType<StarterAssetsInputs>();
         starterAssetsInputs.SetCursorState(false);
         Destroy(this.gameObject);

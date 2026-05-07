@@ -100,6 +100,12 @@ public class ActiveWeapon : MonoBehaviour
 
     void HandleShoot()
     {
+        if (Cursor.lockState != CursorLockMode.Locked || Time.timeScale <= 0f)
+        {
+            starterAssetsInputs.ShootInput(false);
+            return;
+        }
+
         timeSinceLastShot += Time.deltaTime;
 
         if (!starterAssetsInputs.shoot) return;

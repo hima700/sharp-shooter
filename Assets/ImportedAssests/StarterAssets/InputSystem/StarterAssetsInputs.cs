@@ -100,7 +100,15 @@ namespace StarterAssets
 
 		public void SetCursorState(bool newState)
 		{
+			cursorLocked = newState;
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+			Cursor.visible = !newState;
+		}
+
+		public void ResetCombatInputs()
+		{
+			shoot = false;
+			zoom = false;
 		}
 	}
 	
